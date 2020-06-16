@@ -2,19 +2,9 @@
 See LICENSE folder for this sample’s licensing information.
 
 Abstract:
-A collection UICollectionViewCell and UITableViewCell subclasses that contains a UIImageView.
+A model Item for displaying images.
 */
 import UIKit
-
-public class ImageTableViewCell: UITableViewCell {
-    static let reuseIdentifier = "cell"
-    @IBOutlet public weak var imgView: UIImageView!
-}
-
-public class ImageCollectionViewCell: UICollectionViewCell {
-    static let reuseIdentifier = "cell"
-    @IBOutlet public weak var imgView: UIImageView!
-}
 
 enum Section {
     case main

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		575E518E208810BB000B72BC /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E518B208810BB000B72BC /* ImageCache.swift */; };
-		575E5190208810BB000B72BC /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E518D208810BB000B72BC /* ImageCell.swift */; };
+		575E5190208810BB000B72BC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575E518D208810BB000B72BC /* Item.swift */; };
 		578A134C235F9D1700E0ED5A /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578A134B235F9D1700E0ED5A /* CollectionViewController.swift */; };
 		57B31F6B2076C3E100510E94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B31F6A2076C3E100510E94 /* AppDelegate.swift */; };
 		57B31F6D2076C3E100510E94 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B31F6C2076C3E100510E94 /* TableViewController.swift */; };
@@ -144,7 +144,7 @@
 /* Begin PBXFileReference section */
 		40C5639A5B256AF23BA9F028 /* SampleCode.xcconfig */ = {isa = PBXFileReference; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		575E518B208810BB000B72BC /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
-		575E518D208810BB000B72BC /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		575E518D208810BB000B72BC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		578A134B235F9D1700E0ED5A /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		578A134D235FA46000E0ED5A /* Async Image Loading.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Async Image Loading.entitlements"; sourceTree = "<group>"; };
 		5799AB5620CF3F6E0078A3F4 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -323,7 +323,7 @@
 				578A134D235FA46000E0ED5A /* Async Image Loading.entitlements */,
 				57B31F6A2076C3E100510E94 /* AppDelegate.swift */,
 				575E518B208810BB000B72BC /* ImageCache.swift */,
-				575E518D208810BB000B72BC /* ImageCell.swift */,
+				575E518D208810BB000B72BC /* Item.swift */,
 				578A134B235F9D1700E0ED5A /* CollectionViewController.swift */,
 				57B31F6C2076C3E100510E94 /* TableViewController.swift */,
 				57B31F6E2076C3E100510E94 /* Main.storyboard */,
@@ -471,7 +471,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Apple;
 				TargetAttributes = {
 					57B31F662076C3E100510E94 = {
@@ -618,7 +618,7 @@
 			files = (
 				578A134C235F9D1700E0ED5A /* CollectionViewController.swift in Sources */,
 				575E518E208810BB000B72BC /* ImageCache.swift in Sources */,
-				575E5190208810BB000B72BC /* ImageCell.swift in Sources */,
+				575E5190208810BB000B72BC /* Item.swift in Sources */,
 				57B31F6D2076C3E100510E94 /* TableViewController.swift in Sources */,
 				57B31F6B2076C3E100510E94 /* AppDelegate.swift in Sources */,
 				693659F523FDBDB0008ED732 /* ImageURLProtocol.swift in Sources */,
@@ -674,6 +674,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -699,7 +700,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -735,6 +736,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -754,7 +756,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -799,7 +801,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				INFOPLIST_FILE = "Async Image Loading/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -850,7 +852,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				INFOPLIST_FILE = "Async Image Loading/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -14,10 +14,12 @@ As the user scrolls in a view, the app requests the same image repeatedly. This 
 
 ``` swift
 // Returns the cached image if available, otherwise asynchronously loads and caches it.
-public final func load(url: NSURL, completion: @escaping (UIImage?) -> Swift.Void) {
+final func load(url: NSURL, item: Item, completion: @escaping (Item, UIImage?) -> Swift.Void) {
     // Check for a cached image.
     if let cachedImage = image(url: url) {
-        completion(cachedImage)
+        DispatchQueue.main.async {
+            completion(item, cachedImage)
+        }
         return
     }
     // In case there are more than one requestor for the image, we append their completion block.
@@ -33,7 +35,7 @@ public final func load(url: NSURL, completion: @escaping (UIImage?) -> Swift.Voi
         guard let responseData = data, let image = UIImage(data: responseData),
             let blocks = self.loadingResponses[url], error == nil else {
             DispatchQueue.main.async {
-                completion(nil)
+                completion(item, nil)
             }
             return
         }
@@ -42,8 +44,9 @@ public final func load(url: NSURL, completion: @escaping (UIImage?) -> Swift.Voi
         // Iterate over each requestor for the image and pass it back.
         for block in blocks {
             DispatchQueue.main.async {
-                block(image)
+                block(item, image)
             }
+            return
         }
     }.resume()
 }
@@ -59,17 +62,19 @@ An app that loads all of its data on launch risks running out of memory or termi
 Generally the app should wait until the data source requests a cell to fetch and set an image. The sample project demonstrates one approach to fetching and displaying an image on a reusable view : 
 
 ``` swift
-cell.imgView.image = item.image
-ImageCache.publicCache.load(url: item.url as NSURL) { (image) in
-    if let img = image, img != item.image {
+var content = cell.defaultContentConfiguration()
+content.image = item.image
+ImageCache.publicCache.load(url: item.url as NSURL, item: item) { (fetchedItem, image) in
+    if let img = image, img != fetchedItem.image {
         var updatedSnapshot = self.dataSource.snapshot()
-        self.opQueue.async {
-            let item = self.imageObjects[indexPath.row]
+        if let datasourceIndex = updatedSnapshot.indexOfItem(fetchedItem) {
+            let item = self.imageObjects[datasourceIndex]
             item.image = img
             updatedSnapshot.reloadItems([item])
             self.dataSource.apply(updatedSnapshot, animatingDifferences: true)
         }
     }
 }
+cell.contentConfiguration = content
 ```
 [View in Source](x-source-tag://update)

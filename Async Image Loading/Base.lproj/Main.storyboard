@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ScO-1d-SL5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17132" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ScO-1d-SL5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17105"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,7 +33,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="MbA-fc-T7K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5bE-mx-Djp">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -40,27 +41,13 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="onr-sW-ZqV" customClass="ImageCollectionViewCell" customModule="Async_Image_Loading" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="onr-sW-ZqV">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RMb-hy-f1V">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mh0-YX-XcH">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Mh0-YX-XcH" firstAttribute="leading" secondItem="RMb-hy-f1V" secondAttribute="leading" id="193-qF-phs"/>
-                                        <constraint firstItem="Mh0-YX-XcH" firstAttribute="top" secondItem="RMb-hy-f1V" secondAttribute="top" id="g7v-TR-s4A"/>
-                                        <constraint firstAttribute="bottom" secondItem="Mh0-YX-XcH" secondAttribute="bottom" id="lJX-oF-u6Z"/>
-                                        <constraint firstAttribute="trailing" secondItem="Mh0-YX-XcH" secondAttribute="trailing" id="oID-3c-gS5"/>
-                                    </constraints>
                                 </collectionViewCellContentView>
-                                <connections>
-                                    <outlet property="imgView" destination="Mh0-YX-XcH" id="PRs-Dz-KB1"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -68,7 +55,7 @@
                             <outlet property="delegate" destination="egh-zs-RxN" id="5Ia-ay-cbV"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Collection" image="table" catalog="system" id="nH1-t7-amK"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="tablecells" catalog="system" id="nH1-t7-amK"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pQ-SR-xjm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,29 +70,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="EFo-tg-MjL" customClass="ImageTableViewCell" customModule="Async_Image_Loading" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="EFo-tg-MjL">
                                 <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EFo-tg-MjL" id="u1v-w1-HSa">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zdC-GO-UE2">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="zdC-GO-UE2" secondAttribute="height" multiplier="1:1" id="32s-cn-Ict"/>
-                                            </constraints>
-                                        </imageView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="zdC-GO-UE2" firstAttribute="top" secondItem="u1v-w1-HSa" secondAttribute="top" id="Nan-Nf-WMJ"/>
-                                        <constraint firstItem="zdC-GO-UE2" firstAttribute="leading" secondItem="u1v-w1-HSa" secondAttribute="leading" id="gIF-T9-e9l"/>
-                                        <constraint firstAttribute="bottom" secondItem="zdC-GO-UE2" secondAttribute="bottom" id="lfe-SJ-QIp"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="imgView" destination="zdC-GO-UE2" id="hcS-8b-xSh"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -121,7 +92,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rectangle.grid.1x2" catalog="system" width="64" height="50"/>
-        <image name="table" catalog="system" width="64" height="46"/>
+        <image name="rectangle.grid.1x2" catalog="system" width="128" height="101"/>
+        <image name="tablecells" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
