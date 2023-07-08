@@ -41,7 +41,7 @@ class CollectionViewController: UICollectionViewController {
             content.axesPreservingSuperviewLayoutMargins = []
             content.image = item.image
             
-            ImageCache.publicCache.load(url: item.url as NSURL, item: item) { (fetchedItem, image) in
+            ImageCache.publicCache.load(url: item.url as NSURL, item: item, indexPath: indexPath) { (fetchedItem, image) in
                 if let img = image, img != fetchedItem.image {
                     var updatedSnapshot = self.dataSource.snapshot()
                     if let datasourceIndex = updatedSnapshot.indexOfItem(fetchedItem) {
@@ -62,8 +62,8 @@ class CollectionViewController: UICollectionViewController {
         
         // Get our image URLs for processing.
         if imageObjects.isEmpty {
-            for index in 1...100 {
-                if let url = Bundle.main.url(forResource: "UIImage_\(index)", withExtension: "png") {
+            for _ in 1...100 {
+                if let url = Bundle.main.url(forResource: "UIImage_\(50)", withExtension: "png") {
                     self.imageObjects.append(Item(image: ImageCache.publicCache.placeholderImage, url: url))
                 }
             }
